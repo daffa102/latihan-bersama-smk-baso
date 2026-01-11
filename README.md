@@ -1,59 +1,51 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# AbsenKu - Sistem Absensi Sekolah Digital
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+AbsenKu adalah sistem manajemen absensi sekolah modern yang dibangun menggunakan Laravel 12 dan Livewire 3. Sistem ini dirancang untuk memudahkan pencatatan kehadiran siswa oleh Guru Piket dan manajemen data oleh Admin.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Dashboard Admin:** Statistik real-time, manajemen data kelas, siswa, dan tahun ajar.
+- **Dashboard Guru Piket:** Input absensi harian dengan antarmuka yang intuitif.
+- **Autentikasi:** Sistem masuk dan daftar yang rapi dengan peran (role) pengguna.
+- **Ekspor Data:** Kemampuan mengekspor rekap absensi bulanan ke PDF dan Excel.
+- **Desain Premium:** Menggunakan aesthetic glassmorphism dan Tailwind CSS.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Panduan Penggunaan Sistem Autentikasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Berikut adalah langkah-langkah untuk menggunakan fitur Welcome, Login, dan Register yang baru ditambahkan:
 
-## Learning Laravel
+### 1. Halaman Awal (Welcome)
+Saat pertama kali membuka aplikasi di `/`, Anda akan disambut oleh halaman landing.
+- Klik **"Masuk"** di navigasi atas atau **"Masuk ke Akun"** di area hero untuk pergi ke halaman Login.
+- Klik **"Mulai Gratis Sekarang"** untuk pergi ke halaman Registrasi.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 2. Pendaftaran Akun (Register)
+Jika Anda belum memiliki akun:
+- Buka halaman `/register`.
+- Isi **Nama Lengkap**, **Email**, dan **Kata Sandi**.
+- Konfirmasi kata sandi Anda.
+- Klik **"Daftar Sekarang"**.
+- Secara default, akun baru akan mendapatkan peran sebagai **Guru Piket** dan akan langsung diarahkan ke Dashboard Guru.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 3. Masuk ke Akun (Login)
+Jika Anda sudah memiliki akun:
+- Buka halaman `/login`.
+- Masukkan **Email** atau **NIP** (untuk akun lama).
+- Masukkan **Kata Sandi**.
+- Klik **"Masuk Sekarang"**.
+- Sistem akan secara otomatis mengarahkan Anda berdasarkan role:
+    - **Admin:** Ke Dashboard Admin (`/admin/dashboard`).
+    - **Guru Piket:** Ke Dashboard Guru (`/guru/dashboard`).
 
-## Laravel Sponsors
+## Instalasi Pengembangan
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clone repositori ini.
+2. Jalankan `composer install`.
+3. Salin `.env.example` ke `.env` dan sesuaikan konfigurasi database.
+4. Jalankan `php artisan key:generate`.
+5. Jalankan `php artisan migrate`.
+6. Jalankan `npm install && npm run dev`.
+7. Jalankan `php artisan serve`.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+*Dikembangkan dengan ❤️ untuk kemajuan pendidikan.*
